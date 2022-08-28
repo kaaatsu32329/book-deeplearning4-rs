@@ -21,7 +21,7 @@ impl Plot for Vec<f32> {
 
         let (y_min, y_max) = ys
             .iter()
-            .fold((0.0 / 0.0, 0.0 / 0.0), |(m, n), v| (v.min(m), v.max(n)));
+            .fold((f32::NAN, f32::NAN), |(m, n), v| (v.min(m), v.max(n)));
 
         let font = ("sans-serif", 20);
 

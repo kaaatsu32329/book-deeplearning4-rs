@@ -26,14 +26,14 @@ impl AlphaAgent {
 
     pub fn get_action(&self) -> u32 {
         if self.epsilon > rand::thread_rng().gen() {
-            return rand::thread_rng().gen_range(1..self.size as u32);
+            rand::thread_rng().gen_range(1..self.size as u32)
         } else {
             for i in 0..self.size {
-                if self.qualitys.iter().fold(0.0 / 0.0, |m, v| v.max(m)) == self.qualitys[i] {
+                if self.qualitys.iter().fold(f64::NAN, |m, v| v.max(m)) == self.qualitys[i] {
                     return i as u32;
                 }
             }
-            return 0;
+            0
         }
     }
 }

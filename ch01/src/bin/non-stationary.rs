@@ -1,7 +1,7 @@
-use ch01::bandit::{Agent, Bandit};
-use ch01::plot::Plot;
-use ch01::non_stat_bandit::NonStatBandit;
 use ch01::alpha_agent::AlphaAgent;
+use ch01::bandit::{Agent, Bandit};
+use ch01::non_stat_bandit::NonStatBandit;
+use ch01::plot::Plot;
 
 const RUNS: usize = 200;
 const STEPS: u32 = 1000;
