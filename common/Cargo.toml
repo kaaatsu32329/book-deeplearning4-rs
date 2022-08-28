@@ -1,0 +1,12 @@
+[package]
+name = "common"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+nalgebra = "0.31"
+piston = "0.53"
+piston_window = "0.124"
+rand = "0.6"

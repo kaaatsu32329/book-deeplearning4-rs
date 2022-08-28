@@ -1,0 +1,36 @@
+[package]
+name = "ch04"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+common = { path = "../common" }
+nalgebra = "0.31"
+rand = "0.8"
+ordered-float = "3"
+
+[[bin]]
+name = "dp"
+path = "src/bin/dp.rs"
+
+[[bin]]
+name = "dp_inplace"
+path = "src/bin/dp_inplace.rs"
+
+[[bin]]
+name = "gridworld_play"
+path = "src/bin/gridworld_play.rs"
+
+[[bin]]
+name = "policy_eval"
+path = "src/bin/policy_eval.rs"
+
+[[bin]]
+name = "policy_iter"
+path = "src/bin/policy_iter.rs"
+
+[[bin]]
+name = "value_iter"
+path = "src/bin/value_iter.rs"
