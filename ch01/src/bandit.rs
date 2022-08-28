@@ -59,3 +59,35 @@ impl Agent {
         }
     }
 }
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    use assert_approx_eq::assert_approx_eq;
+
+    const SIZE: usize = 5;
+    const ARM: u32 = 2;
+    const EPSILON: f64 = 0.05;
+    const ACTION: u32 = 2;
+    const REWARD: u32 = 8;
+
+    #[test]
+    fn bandit() {
+        let bandit = Bandit::new(SIZE);
+        let result = bandit.play(ARM);
+        assert!(result == 0 || result == 1);
+    }
+
+    #[test]
+    fn agent() {
+        let mut agent = Agent::new(EPSILON, SIZE);
+        agent.update(ACTION, REWARD);
+
+        assert_eq!(agent.numbers[ACTION as usize], 1);
+        assert_approx_eq!(agent.qualitys[ACTION as usize], REWARD as f64);
+
+        let agent_action = agent.get_action();
+        assert!(agent_action < SIZE as u32);
+    }
+}

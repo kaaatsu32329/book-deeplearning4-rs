@@ -37,3 +37,27 @@ impl AlphaAgent {
         }
     }
 }
+
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    use assert_approx_eq::assert_approx_eq;
+
+    const SIZE: usize = 5;
+    const EPSILON: f64 = 0.05;
+    const ACTION: u32 = 2;
+    const REWARD: u32 = 8;
+    const ALPHA: f64 = 0.2;
+
+    #[test]
+    fn alpha_agent() {
+        let mut alpha_agent = AlphaAgent::new(EPSILON, SIZE, ALPHA);
+        alpha_agent.update(ACTION, REWARD);
+
+        assert_approx_eq!(alpha_agent.qualitys[ACTION as usize], ALPHA * REWARD as f64);
+
+        let agent_action = alpha_agent.get_action();
+        assert!(agent_action < SIZE as u32);
+    }
+}
