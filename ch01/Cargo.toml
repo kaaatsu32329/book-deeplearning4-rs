@@ -1,0 +1,30 @@
+[package]
+name = "ch01"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy.workspace = true
+bevy_egui.workspace = true
+egui.workspace = true
+rand.workspace = true
+
+utils.workspace = true
+
+[[bin]]
+name = "avg"
+path = "src/bin/avg.rs"
+
+[[bin]]
+name = "bandit"
+path = "src/bin/bandit.rs"
+
+[[bin]]
+name = "bandit_avg"
+path = "src/bin/bandit_avg.rs"
+
+[[bin]]
+name = "non_stationary"
+path = "src/bin/non_stationary.rs"

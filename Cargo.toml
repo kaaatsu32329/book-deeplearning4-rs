@@ -1,2 +1,11 @@
 [workspace]
-members = ["ch01"]
+resolver = "2"
+members = ["ch01", "utils"]
+
+[workspace.dependencies]
+bevy = "0.10"
+bevy_egui = "0.20"
+egui = "0.21"
+rand = "0.8.5"
+
+utils = { path = "./utils" }
